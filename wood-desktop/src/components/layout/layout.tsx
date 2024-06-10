@@ -5,7 +5,7 @@ import {BreadcrumbLayout} from "./breadcrumb/breadcrumb.layout.tsx";
 
 export const MainLayout = ({children}) => {
     return (
-        <div>
+        <div className={"bg-gray-100"}>
             <HeaderLayout/>
             <BreadcrumbLayout/>
             <SidebarLayout/>

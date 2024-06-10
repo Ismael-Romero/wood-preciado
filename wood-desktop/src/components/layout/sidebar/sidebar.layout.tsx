@@ -24,10 +24,10 @@ export const SidebarLayout = () => {
                 </a>
             </div>
 
-            <nav className="hs-accordion-group p-6 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
+            <nav className="hs-accordion-group p-6 w-full flex flex-col flex-wrap" data-hs-accordion-always-open="">
                 <ul className="space-y-1.5">
                     <NavItem label={'Dashboard'} route={'/'}/>
-                    <NavItem label={'Invenatio'} route={'/stock'}/>
+                    <NavItem label={'Inventario'} route={'/stock'}/>
                     <NavItem label={'Ordenes'} route={'/orders'}/>
                 </ul>
             </nav>
