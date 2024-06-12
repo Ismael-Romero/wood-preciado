@@ -4,11 +4,13 @@ import {DashboardPage} from "../pages/dashboard/dashboard.tsx";
 import {AuthPage} from "../pages/auth/auth.tsx";
 import {StockPage} from "../pages/stock/stock.tsx";
 import {OrdersPage} from "../pages/orders/orders.tsx";
+import {AuthRegisterPage} from "../pages/auth/auth.register.tsx";
 
 export const AuthRoutes = () => {
     return (
         <Routes>
             <Route path={'/login'} element={ <AuthPage/> }/>
+            <Route path={'/register'} element={ <AuthRegisterPage/> }/>
         </Routes>
     );
 }
