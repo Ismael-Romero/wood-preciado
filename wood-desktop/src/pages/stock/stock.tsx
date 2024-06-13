@@ -130,9 +130,7 @@ export const StockPage = () => {
                             handleObserver={handleObserverChanges}/>
 
                 <ModalStock isOpen={isModalOpenStock}
-                            handleClose={() => closeModal("stock")}
-                            observer={observerChanges}
-                            handleObserver={handleObserverChanges}/>
+                            handleClose={() => closeModal("stock")}/>
 
             <Layout className={"bg-transparent flex flex-row justify-start align-middle gap-2 mb-5"}>
                 <Button type={"primary"} onClick={() => showModal("product")}>

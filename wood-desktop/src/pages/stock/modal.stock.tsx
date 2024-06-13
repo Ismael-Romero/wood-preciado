@@ -1,7 +1,7 @@
 import {Modal} from "antd";
 
 
-export const ModalStock = ({ isOpen, handleClose, observer, handleObserver }) => {
+export const ModalStock = ({ isOpen, handleClose }) => {
 
     const onClose = () => {
         handleClose();
