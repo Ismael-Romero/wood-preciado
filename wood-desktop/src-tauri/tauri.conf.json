@@ -11,7 +11,11 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "all": true,
+      "http": {
+        "all": true,
+        "request": true
+      },
       "shell": {
         "all": false,
         "open": true
@@ -28,7 +32,7 @@
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
     },
     "bundle": {
       "active": true,
