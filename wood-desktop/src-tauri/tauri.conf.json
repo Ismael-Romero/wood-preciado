@@ -14,7 +14,8 @@
       "all": true,
       "http": {
         "all": true,
-        "request": true
+        "request": true,
+        "scope": ["https://localhost/*", "https://something.else/*", "http://216.225.203.244:3000/api/*"]
       },
       "shell": {
         "all": false,
