@@ -4,10 +4,13 @@ import {invoke} from "@tauri-apps/api";
 const url = "http://216.225.203.244:3000/api";
 
 const config = {
-    headers:{
-        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    },
+    common: {
+        Referrer: null
     }
-}
+};
 
 export const apiGetStock = async () => {
     return await invoke("get_stock");
