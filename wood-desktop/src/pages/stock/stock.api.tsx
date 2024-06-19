@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {invoke} from "@tauri-apps/api";
 
 const url = "http://216.225.203.244:3000/api";
 
@@ -8,8 +9,8 @@ const config = {
     }
 }
 
-export const apiGetStock = () => {
-    return axios.get(`${url}/stock`, config);
+export const apiGetStock = async () => {
+    return await invoke("get_stock");
 }
 
 export const apiAddStockProduct = (payload: any) => {

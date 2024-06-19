@@ -89,8 +89,10 @@ export const StockPage = () => {
     const getStock = () => {
         setIsLoadingTable(true);
         apiGetStock().then((response) => {
+            let data = JSON.parse(response.toString()).data;
+
             let tempData = [];
-            response.data.data.forEach((stock, index) => {
+            data.forEach((stock, index) => {
                 tempData.push({
                     ...stock,
                     key: index

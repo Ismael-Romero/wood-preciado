@@ -14,7 +14,9 @@ mod wood{
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![
+            wood::api::get_stock
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
