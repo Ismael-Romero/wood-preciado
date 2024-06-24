@@ -26,6 +26,7 @@ export const ModalUnits = ({ isOpen, handleClose, handleObserver}) => {
         }).then((response) => {
 
             if(response.status !== 200){
+                // @ts-ignore
                 openNotificationError(response.statusText);
                 setIsLoading(false);
                 return;

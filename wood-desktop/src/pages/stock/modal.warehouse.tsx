@@ -29,6 +29,7 @@ export const ModalWarehouse = ({ isOpen, handleClose, handleObserver }) => {
             phone: values.phone.toString(),
         }).then((response) => {
             if (response.status !== 200){
+                // @ts-ignore
                 openNotificationError(response.statusText);
                 setIsLoading(false);
                 return;

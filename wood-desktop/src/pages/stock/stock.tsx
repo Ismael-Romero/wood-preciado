@@ -56,6 +56,7 @@ export const StockPage = () => {
 
             if (response.status !== 200) {
                 setIsDeleting(false);
+                // @ts-ignore
                 openNotificationError(response.statusText);
                 return;
             }
@@ -92,6 +93,7 @@ export const StockPage = () => {
             //let data = JSON.parse(response.toString()).data;
 
             let tempData = [];
+            // @ts-ignore
             response.data.data.forEach((stock, index) => {
                 tempData.push({
                     ...stock,
