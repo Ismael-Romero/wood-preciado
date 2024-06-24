@@ -33,6 +33,7 @@ export const ModalOrders = ({ isOpen, handleClose, observer, handleObserver}) =>
 
             let productList = [];
             let productSelectedList = [];
+            // @ts-ignore
             response.data.data.forEach((stock, index) => {
                 productList.push({
                     ...stock,

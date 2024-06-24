@@ -52,6 +52,7 @@ export const OrdersPage = () => {
         setIsLoadingTable(true);
         apiGetOrders().then((response) => {
             let tempData = [];
+            // @ts-ignore
             response.data.data.forEach((stock, index) => {
                 tempData.push({
                     ...stock,
@@ -86,6 +87,7 @@ export const OrdersPage = () => {
 
             if (response.status != 200){
                 setIsLoadingStatus(false);
+                // @ts-ignore
                 openNotificationError(response.statusText);
                 return;
             }

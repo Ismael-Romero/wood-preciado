@@ -32,6 +32,7 @@ export const ModalProducts = ({ isOpen, handleClose, observer, handleObserver, p
 
     const getWarehouses = () => {
         apiGetWarehouses().then((response) => {
+            // @ts-ignore
             setWarehouses(response.data.data);
         }).catch((error) => {
             openNotificationError(error.toString());
@@ -40,6 +41,7 @@ export const ModalProducts = ({ isOpen, handleClose, observer, handleObserver, p
 
     const getUnits = () => {
         apiGetUnits().then((response) => {
+            // @ts-ignore
             setUnits(response.data.data);
         }).catch((error) => {
             openNotificationError(error.toString());
@@ -73,6 +75,7 @@ export const ModalProducts = ({ isOpen, handleClose, observer, handleObserver, p
         apiAddStockProduct(buildBodyRequest(values)).then((response) => {
             if(response.status !== 200){
                 setIsLoading(false);
+                // @ts-ignore
                 openNotificationSuccess(response.statusText);
                 return;
             }
@@ -92,6 +95,7 @@ export const ModalProducts = ({ isOpen, handleClose, observer, handleObserver, p
         apiUpdateStockProduct(buildBodyRequest(values)).then((response) => {
             if(response.status !== 200){
                 setIsLoading(false);
+                // @ts-ignore
                 openNotificationSuccess(response.statusText);
                 return;
             }
