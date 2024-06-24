@@ -1,48 +1,64 @@
-import axios from 'axios';
-import {invoke} from "@tauri-apps/api";
-import axiosTauriApiAdapter from 'axios-tauri-api-adapter';
-const client = axios.create({ adapter: axiosTauriApiAdapter });
-
+//import axios from 'axios';
 const url = "http://216.225.203.244:3000/api";
-
-const config = {
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-    },
-    common: {
-        Referrer: null
-    }
-};
+import {getClient} from "@tauri-apps/api/http";
 
 export const apiGetStock = async () => {
-    //return axios.get(`${url}/stock/`, config);
-    return await invoke("get_stock");
+    const client = await  getClient();
+    return await client.get(`${url}/stock/`);
 }
 
-export const apiAddStockProduct = (payload: any) => {
-    return client.post(`${url}/stock/product`, payload, config);
+export const apiAddStockProduct = async (payload: any) => {
+    const client = await  getClient();
+    return await client.post(`${url}/stock/product`, {
+        payload: payload,
+        type: "Json",
+    });
 }
 
-export const apiUpdateStockProduct = (payload: any) => {
-    return client.post(`${url}/stock/update/product`, payload, config);
+export const apiUpdateStockProduct = async (payload: any) => {
+    const client = await  getClient();
+    //return axios.post(`${url}/stock/update/product`, payload);
+    return await client.post(`${url}/stock/update/product`, {
+        payload: payload,
+        type: "Json",
+    });
 }
 
-export const apiDeleteStockProduct = (payload: any) => {
-    return client.post(`${url}/stock/delete/product`, payload, config);
+export const apiDeleteStockProduct = async (payload: any) => {
+    //return axios.post(`${url}/stock/delete/product`, payload);
+    const client = await  getClient();
+    return await client.post(`${url}/stock/delete/product`, {
+        payload: payload,
+        type: "Json",
+    });
 }
 
-export const apiAddUnit = (payload: any) => {
-    return client.post(`${url}/stock/unit`, payload, config);
+export const apiAddUnit = async (payload: any) => {
+    //return axios.post(`${url}/stock/unit`, payload);
+    const client = await  getClient();
+    return await client.post(`${url}/stock/unit`, {
+        payload: payload,
+        type: "Json",
+    });
 }
 
 export const apiGetUnits = async () => {
-    return await client.get(`${url}/stock/units`, config);
+    //return await axios.get(`${url}/stock/units`);
+    const client = await  getClient();
+    return await client.get(`${url}/stock/units`);
 }
 
-export const apiGetWarehouses = () => {
-    return client.get(`${url}/stock/warehouse`, config);
+export const apiGetWarehouses = async () => {
+    //return axios.get(`${url}/stock/warehouse`);
+    const client = await  getClient();
+    return await client.get(`${url}/stock/warehouse`);
 }
 
-export const apiAddWarehouse = (payload: any) => {
-    return client.post(`${url}/stock/warehouse`, payload, config);
+export const apiAddWarehouse = async (payload: any) => {
+    //return axios.post(`${url}/stock/warehouse`, payload);
+    const client = await  getClient();
+    return await client.post(`${url}/stock/warehouse`, {
+        payload: payload,
+        type: "Json",
+    });
 }

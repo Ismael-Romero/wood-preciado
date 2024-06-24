@@ -29,11 +29,11 @@ export const ModalOrders = ({ isOpen, handleClose, observer, handleObserver}) =>
     const getStock = () => {
         apiGetStock().then((response) => {
 
-            let data = JSON.parse(response.toString()).data;
+            //let data = JSON.parse(response.toString()).data;
 
             let productList = [];
             let productSelectedList = [];
-            data.forEach((stock, index) => {
+            response.data.data.forEach((stock, index) => {
                 productList.push({
                     ...stock,
                     key: index
